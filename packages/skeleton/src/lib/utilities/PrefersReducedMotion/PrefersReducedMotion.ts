@@ -20,10 +20,10 @@ export const prefersReducedMotionStore = readable(prefersReducedMotion(), (set) 
 			set(event.matches);
 		};
 		const mediaQueryList = window.matchMedia(reducedMotionQuery);
-		mediaQueryList.addEventListener('change', setReducedMotion);
+		mediaQueryList?.addEventListener('change', setReducedMotion);
 
 		return () => {
-			mediaQueryList.removeEventListener('change', setReducedMotion);
+			mediaQueryList?.removeEventListener('change', setReducedMotion);
 		};
 	}
 });
